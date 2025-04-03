@@ -1,0 +1,69 @@
+/* Entire container, keeps perspective */
+.flip-container {
+  perspective: 1000px;
+  width: 700px;  /* Restrict the container size */
+  height: 700px;
+  position: absolute;  /* Ensures absolute children stay within bounds */
+  overflow: hidden; /* Prevents content from overflowing */
+}
+
+/* Remove hover effect and replace it with .flipped */
+.flip-container.flipped .flipper {
+  transform: rotateY(180deg);  /* Flip effect */
+}
+
+/* Front pane, placed above back */
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+/* Back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+}
+
+/* Flip speed and preserve 3D effect */
+.flipper {
+  transition: 2s;
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Common styles for front and back */
+.front, .back {
+  width: 100%;  /* Match the container size */
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Ensure images fit properly */
+.front img, .back img {
+  width: 100%;  /* Restrict the image to fit within the container */
+  height: 100%; /* Maintain the container size */
+  object-fit: contain; /* Ensure the image covers the area without distortion */
+  display: block; /* Prevent inline spacing issues */
+  max-width: 100%; /* Prevents image overflow */
+  max-height: 100%; /* Prevents image overflow */
+}
+
+/* Reset unwanted margin/padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding doesn’t increase element size */
+}
+
+.center {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 100vh; /* Takes full screen height */
+  margin: 0; /* Removes default margin */
+}
+

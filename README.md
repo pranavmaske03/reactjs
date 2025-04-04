@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# reactjs
-=======
-# Notes
-
+# Reactjs Notes
 
 # Introduction to React
 
@@ -262,7 +258,3 @@ useState is a React Hook that lets us add a state variable to our component. It 
 ***returns***
 - The current state. During the first render, it will match the initialState you have passed.
 - The set function that lets you update the state to a different value and trigger a re-render.
-
-
-
->>>>>>> dd3011b (Initial commit: Add all project files)

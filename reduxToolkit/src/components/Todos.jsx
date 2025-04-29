@@ -12,7 +12,7 @@ function Todos() {
         {todos.length > 0 ? (
           todos.map((todo) => (
             <li
-              key={todo.id}
+              key={todo.id}a
               className="flex justify-between items-center bg-gray-800 text-white px-5 py-3 rounded-lg shadow-md transition-transform transform hover:scale-105"
             >
               <span className="text-lg">{todo.text}</span>
